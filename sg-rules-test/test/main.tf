@@ -2,7 +2,7 @@ resource "aws_security_group" "agent_security_group" {
   for_each    = var.enabled ? var.agent_sets : {}
   name        = "${each.key}_security_group"
   description = "Security group for ${each.key}"
-  #   vpc_id      = aws_vpc.default.id
+  vpc_id      = var.vpc_id
 
   dynamic "ingress" {
     for_each = each.value.ingress_ports

@@ -1,5 +1,5 @@
 enabled = true
-
+vpc_id = ""
 agent_sets = {
   "dndc_connector" = {
     short_name                = ""
